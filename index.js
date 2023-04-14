@@ -3,17 +3,24 @@ const fs = require("fs");
 const path = require("path");
 //path hama path da deta hai ex= jasa hama kisi folder ka under jana hai tab ishka use karanga
 const dirPath = path.join(__dirname, "files");
-// for (let i = 1; i <= 10; i++) {
-//   //   fs.writeFileSync(dirPath + "/" + i + ".txt", "hello"); //string
-//   fs.writeFileSync(`${dirPath} "/" ${i} .txt`, "hello"); //without string
+const filePath = `${dirPath}/apple.txt`;
 
-//   //file create karna ka liya
-// }
+//files updated function
+// fs.appendFile(filePath, "and file name is apple.txt", (err) => {
+//   if (!err) {
+//     console.log("not error and file update");
+//   }
+// });
 
-//get files name and print
-fs.readdir(dirPath, (err, files) => {
-  // console.log("files",files)//files ki array milagi
-  files.forEach((item) => {
-    console.log("item", item);
-  });
-});
+//files rename
+// fs.rename(filePath, `${dirPath}/orange.txt`, (err) => {
+//   if (!err) {
+//     console.log("file update without error");
+//   }
+// });
+
+//files delete
+fs.unlinkSync(`${dirPath}/orange.txt`);
+
+//iq = buffer kya hota hai
+// node js ko file create karna ka liya space chiya hota hai isi ko buffer kahta hai
